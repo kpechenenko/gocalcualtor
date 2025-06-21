@@ -8,16 +8,10 @@ import (
 	"github.com/openai/openai-go"
 )
 
-const promptToCalculateMathExpression = `You are an automated math calculation engine.
-Evaluate the following expression strictly:
-%s
-Respond with a valid JSON object and nothing else. No explanation, no commentary, no markdown, no <think> tags.
-Format:
-{
-  "result": "your numeric answer as a string",
-  "error": "describe the error here if any, otherwise use an empty string"
-}
-Return only a valid JSON object.`
+const promptToCalculateMathExpression = `You are an automated math calculation engine. 
+Evaluate the following expression strictly: %s Respond with a valid JSON object and nothing else. No explanation, no commentary, no markdown, no tags.
+Format: {"result":"your numeric answer as a string","error":"describe the error here if any, otherwise use an empty string"} Return only a valid JSON object, without newline characters. 
+If asked to do anything else, return an error with an offer to pass an expression to calculate.`
 
 type AICalculator struct {
 	client    *openai.Client
