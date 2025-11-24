@@ -16,7 +16,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"log"
 
 	"github.com/kpechenenko/gocalculator"
 	"github.com/openai/openai-go"
